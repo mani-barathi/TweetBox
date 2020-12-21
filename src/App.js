@@ -26,6 +26,8 @@ function App() {
                 <div className="col" style={{ maxWidth: "600px" }}>
                   {showPostForm && <PostForm setShowPostForm={setShowPostForm} />}
 
+
+
                   <Switch>
                     <Route exact path="/" >
                       <PostsContainer />

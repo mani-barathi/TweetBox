@@ -41,6 +41,7 @@ function MyPosts({ setShowPostForm }) {
                 <h3>My Posts</h3>
                 <hr />
                 <FlipMove >
+                    {/* If there is No Posts */}
                     {myPosts.length === 0 &&
                         <p className="text-center"> You haven't Posted any Tweet. Click &nbsp;
                             <span onClick={() => { setShowPostForm(true) }} className="text-primary"
@@ -50,6 +51,7 @@ function MyPosts({ setShowPostForm }) {
                             &nbsp; to Tweet Now
                         </p>}
 
+                    {/* Rendering Posts  */}
                     {myPosts.map(post =>
                         <Post key={post.id} post={post} isMyPostPage={true} />
                     )

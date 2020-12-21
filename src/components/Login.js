@@ -23,7 +23,7 @@ function Login() {
                     <h3 >Login</h3>
                     <hr />
                     <input type="text" value={input} onChange={e => { setInput(e.target.value) }} placeholder="Enter your name.." className="form-control" />
-                    <button onClick={loginUser} className="btn btn-primary mt-2 btn-sm">Send</button>
+                    <button onClick={loginUser} className="btn btn-primary mt-2 btn-sm">Login</button>
                 </form>
             </div>
 

@@ -52,13 +52,10 @@ function PostForm({ setShowPostForm }) {
                         })
                 }
             )  // end of uploadTask
-
         } else {  // if there is no file
             db.collection('postss').add(data)
             closePostForm()
         }
-
-
     }
 
     return (
@@ -68,16 +65,19 @@ function PostForm({ setShowPostForm }) {
                     <h4>Post</h4>
                     <button onClick={closePostForm} className="btn font-weight-bold border-dark btn-sm px-2 py-1">X</button>
                 </div>
-                <form className="mt-2">
+                <form onSubmit={handlePostForm} className="mt-2">
                     <div className="form-group d-flex justify-content-center">
                         <progress value={progress} className="w-75 " max="100"> {progress} </progress>
                     </div>
                     <div className="form-group">
-                        <input type="file" onChange={e => setFile(e.target.files[0])} className="form-control form-control-sm" />
+                        <input type="file" onChange={e => setFile(e.target.files[0])}
+                            className="form-control form-control-sm" />
                     </div>
-                    <div className="form-group d-flex">
-                        <input value={postText} onChange={e => setpostText(e.target.value)} type="text" className="form-control" placeholder="What's going on.." required />
-                        <button onClick={handlePostForm} className="ml-2 btn btn-sm bg-dark text-light shadow float-right">Update</button>
+                    <div className="form-group">
+                        <textarea value={postText} onChange={e => setpostText(e.target.value)}
+                            className="form-control" rows="2" placeholder="What's going on.." required >
+                        </textarea>
+                        <button className="mt-2 btn btn-sm bg-dark text-light shadow float-right">Update</button>
                     </div>
                     <small className="text-muted">* Uploading an Image is not mandatory</small>
                 </form>
