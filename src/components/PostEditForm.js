@@ -28,7 +28,7 @@ function PostEditForm({ post, setshowEditPostForm }) {
                         {post.data.imageUrl &&
                             <center>
                                 <p className=" py-0 mb-0">{post.data.imageName}</p>
-                                <small className="text-muted "> Cannot Upload Change a Uploded Image</small>
+                                <small className="text-muted ">Cannot Upload or Change an Uploded Image</small>
                             </center>
                         }
                     </div>

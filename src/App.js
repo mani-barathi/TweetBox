@@ -9,10 +9,17 @@ import PostForm from "./components/PostForm"
 import MyPosts from "./components/MyPosts"
 
 import { UserContext } from "./context/userContext"
+import { auth } from "./firebase"
 
 function App() {
-  const [user] = useContext(UserContext)
+  const [user, setUser] = useContext(UserContext)
   const [showPostForm, setShowPostForm] = useState(false)
+
+  auth.onAuthStateChanged(authUser => {
+    if (authUser) {
+      setUser(authUser)
+    }
+  })
 
   return (
     <div className="app bg-light">
@@ -25,8 +32,6 @@ function App() {
               <div className="row justify-content-center">
                 <div className="col" style={{ maxWidth: "600px" }}>
                   {showPostForm && <PostForm setShowPostForm={setShowPostForm} />}
-
-
 
                   <Switch>
                     <Route exact path="/" >

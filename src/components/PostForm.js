@@ -21,11 +21,12 @@ function PostForm({ setShowPostForm }) {
         event.preventDefault()
         if (!postText) return
         const data = {
-            author: user,
+            author: user.displayName,
+            authorEmail: user.email,
+            authorPhotoURL: user.photoURL,
             text: postText,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }
-
         // upload if there is file
         if (file) {
             const uploadTask = storage.ref(`images/${file.name}`).put(file);

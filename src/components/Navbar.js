@@ -1,13 +1,15 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from "../context/userContext"
-
+import { auth } from "../firebase"
 function Navbar({ setShowPostForm }) {
     const [user, setUser] = useContext(UserContext)
 
     const logoutUser = () => {
         setShowPostForm(false)
-        setUser(null)
+        auth.signOut()
+            .then(() => setUser(null))
+            .catch(err => alert(err.message))
     }
 
     return (

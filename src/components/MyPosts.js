@@ -9,7 +9,7 @@ function MyPosts({ setShowPostForm }) {
     const [myPosts, setMyPosts] = useState([])
 
     useEffect(() => {
-        let unsubscribe = db.collection('postss').where("author", "==", user)
+        let unsubscribe = db.collection('postss').where("authorEmail", "==", user.email)
             .orderBy('timestamp', 'desc')
             .onSnapshot(
                 (snapshot) => {
