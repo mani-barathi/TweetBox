@@ -21,8 +21,8 @@ function PostForm({ setShowPostForm }) {
         event.preventDefault()
         if (!postText) return
         const data = {
+            uid: user.uid,
             author: user.displayName,
-            authorEmail: user.email,
             authorPhotoURL: user.photoURL,
             text: postText,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()

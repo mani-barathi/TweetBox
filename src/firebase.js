@@ -1,8 +1,7 @@
 import firebase from "firebase"
 
 const firebaseConfig = {
-    //replace firebase config right here
-
+    // replace project keys here
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig)
