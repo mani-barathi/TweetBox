@@ -2,15 +2,21 @@
 A Tweeting Web Application developed using React🚀 and Firebase🔥
 
 ### Features 
-* Create, Edit, Delete Tweets.
-* Google Authentication for Login (using firebase)
+* View, Create, Edit, Delete Tweets.
+* Google Authentication for Sign In
+
+### Technology Used
+* **React** - Frontend
+* **Firebase** - Baas (Backend as a Service)
+    1. **Firestore** - NoSQL database
+    2. **Authentication** - Google Authentication
+    3. **Storage** - Cloud Storage for uploading and saving Images
 
 ### To run this on Local machine
 * Clone the repo, install all the dependcies from package.json
-* Create a firebase project and replace all the credentials in 'src/firebase.js'
+* Create a firebase project and replace all the Project keys in 'src/firebase.js'
+* Turn on Google Authentication in your firebase authentication console
+* Run app by typing `npm start`in command line
 
-#### `npm start`
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-#### `npm run build`
-Builds the app for production to the `build` folder
+### Note
+You will have to create an Index in firestore, as `MyPosts` Componenet uses nested Queries to fetch data. When using the app for first time you will receive a error in console stating you to create an Index in Firestore. That Error will provide a link with it, you can click on the link and create an Index. (This is an One time issue)
