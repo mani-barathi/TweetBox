@@ -12,6 +12,9 @@ A Tweeting Web Application developed using React🚀 and Firebase🔥
     2. **Authentication** - Google Authentication
     3. **Storage** - Cloud Storage for uploading and saving Images
 
+### Preview
+<img src="./public/preview.gif">
+
 ### To run this on Local machine
 * Clone the repo, install all the dependcies from package.json
 * Create a firebase project and replace all the Project keys in 'src/firebase.js'
